@@ -20,7 +20,7 @@ class App extends Component {
 
     this.setState({loading: !this.state.loading})
 
-    axios.get(`https://jobs.github.com/positions.json?description=${this.state.desc}&location=${this.state.city}`).then(res => {
+    axios.get(`http://jobs.github.com/positions.json?description=${this.state.desc}&location=${this.state.city}`).then(res => {
       if (res.data.length == 0 || !res.data) {
         this.setState({results: 'No result based on the job or city you entered.',loading: !this.state.loading})
       } else {
